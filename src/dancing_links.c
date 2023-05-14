@@ -31,7 +31,7 @@ void append(stack_t *stack, node_t *elem) {
     // resize if needed
     if (stack->size == stack->capacity) {
         stack->capacity *= 2;
-        stack->tab = realloc(stack->tab, stack->capacity);
+        stack->tab = realloc(stack->tab, stack->capacity * sizeof(*(stack->tab)));
         assert(stack->tab != NULL);
     }
 
